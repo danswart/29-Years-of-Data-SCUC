@@ -1,37 +1,31 @@
 ---
 title: "Changes in Composition"
 author: "Dan Swart, Trustee, Seat 6"
-editor: 
-  markdown: 
+editor:
+  markdown:
     wrap: 72
 ---
 
+<br> <br> <br>
 
-<br>
-<br>
-<br>
+Your eyes are all you need to get a deep sense of the steady growth,
+development and accomplishments of the district over the last 29 years.
 
-Let your eyes wander over these plots and get a sense of the growth and
-development of the district over the last 28 years. Using just your eyes
-you will gain an appreciation for the accomplishments and growth of the
-district.
-
-<br>
-<br>
-<br>
+<br> <br> <br>
 
 Enjoy!
 
-<br>
-\clearpage
+<br> \clearpage
 
+```{r}
+#| echo: false
+#| eval: !expr knitr::is_html_output()
+#| output: asis
 
-
-```{r, echo=FALSE, eval=knitr::is_html_output(), results='asis'}
 
 #####  USE THIS CODE TO UPDATE THE RUNNING BAR CHART AND CREATE AN MP4 WITH LARGER TITLES
-
-
+# 
+# 
 # library(tidyverse)
 # library(gganimate)
 # library(ggtext)
@@ -42,10 +36,12 @@ Enjoy!
 # library(av)
 # library(ggplot2)
 # library(ggtext)
+# library(pdftools)
+# library(magick)
 # 
 # # Read in data
 #  snapshots <- read_csv(file = here::here("data",
-#                                    "SCUC Snapshots 1995 to 2022-LONG.csv")
+#                                    "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
 #                  )
 # 
 # 
@@ -181,46 +177,47 @@ Enjoy!
 #   view_follow(fixed_x = TRUE)  +
 #   labs(title = '<span style="font-size: 24px;">Proportions by Year: <span style="font-size: 36px; color: darkgreen; font-weight: bold;">{closest_state}</span></span>',
 #        subtitle  =  "Composition of Student Body by Ethnicity",
-#        caption  = ""
+#        caption  = "This animation will repeat in 12 seconds"
 #   ) +
 #   scale_fill_manual(values = paletteer_d("awtools::bpalette")
 #   )
 # 
 # # print(student_body)
-# 
-# 
-# # animate(student_body,
-# #         nframes = 300,
-# #         fps = 30,
-# #         duration = 28,
-# #         end_pause = 400,
-# #         width = 2400,
-# #         height = 1600,
-# #         rewind = FALSE)
 # # 
 # # 
-# #  # Save AS GIF with three loops
-# # anim_save("student-composition-racing-bar.gif",
-# #   animation = student_body,
-# #   path = "gif",
-# #   nframes = 300,
-# #   fps = 30,
-# #   duration = 28,
-# #   end_pause = 400,
-# #   width = 1200,
-# #   height = 800,
-# #   rewind = FALSE,
-# #   renderer = gifski_renderer(),
-# #   res = 96,
-# #   theme = theme(labs
-# #                 (title = '<span style="font-size: 24px;">Proportions by Year: <span style="font-size: 36px; color: darkgreen; font-weight: bold;">{closest_state}</span></span>',
-# #                   subtitle  =  "Composition of Student Body by Ethnicity"
-# #                   )
-# #                 )
-# # )
+# animate(student_body,
+#         nframes = 300,
+#         fps = 30,
+#         duration = 28,
+#         end_pause = 400,
+#         width = 2400,
+#         height = 1600,
+#         rewind = FALSE)
+# 
+# 
+#  # Save AS GIF with three loops
+# anim_save("student-composition-racing-bar-1995-2023.gif",
+#   animation = student_body,
+#   path = "gif",
+#   nframes = 300,
+#   fps = 30,
+#   duration = 28,
+#   end_pause = 400,
+#   width = 1200,
+#   height = 800,
+#   rewind = FALSE,
+#   renderer = gifski_renderer(),
+#   res = 96,
+#   theme = theme(labs
+#                 (title = '<span style="font-size: 24px;">Proportions by Year: <span style="font-size: 36px; color: darkgreen; font-weight: bold;">{closest_state}</span></span>',
+#                   subtitle  =  "Composition of Student Body by Ethnicity",
+#                   caption = "This animation will repeat in 12 seconds"
+#                   )
+#                 )
+# )
 # 
 # # Save AS MP4
-# anim_save("student-composition-racing-bar.mp4",
+# anim_save("student-composition-racing-bar-1995-2023.mp4",
 #   animation = student_body,
 #   path = "gif",
 #   nframes = 300,
@@ -234,71 +231,61 @@ Enjoy!
 #   res = 96,
 #   theme = theme(labs
 #                 (title = '<span style="font-size: 24px;">Proportions by Year: <span style="font-size: 36px; color: darkgreen; font-weight: bold;">{closest_state}</span></span>',
-#                   subtitle  =  "Composition of Student Body by Ethnicity"
+#                   subtitle  =  "Composition of Student Body by Ethnicity",
+#                   caption = "This animation will repeat in 12 seconds"
 #                   )
 #                 )
 #   )
-
+# 
 
 #####  USE THIS VERSION OF A RUNNING BAR CHART TO CREATE AN MP4 WITH LARGER TITLES
 
 ```
 
+```{r}
+#| echo: FALSE
+#| eval: !expr knitr::is_html_output()
+#| animation-hook: if (knitr::is_html_output()) 'ffmpeg'
 
 
-
-
-```{r, echo=FALSE, eval=knitr::is_html_output(), animation.hook=if (knitr::is_html_output()) 'ffmpeg'}
-
-knitr::include_graphics("gif/student-composition-racing-bar.gif")
+knitr::include_graphics("gif/student-composition-racing-bar-1995-2023.gif")
 
 ```
 
-
-
-
-**Comment:**  For those who prefer static charts
-<br>
-<br>
-<br>
+**Comment:** For those who prefer static charts <br> <br> <br>
 
 \vspace{1.0in}
 
-
-![](recording/student-demo-ethnic-2024_05_29_13_05_13.125282.png)
-
+![](recording/student-demo-ethnic-categories-1995-2023.png)
 
 \clearpage
 
-**Comment:**
-<br>
-<br>
-<br>
+**Comment:** <br> <br> <br>
 
 \vspace{1.0in}
 
-
-
-![](recording/student-demo-other-cats-2024_05_29_13_14_50.332520.png)
-
-
+![](recording/student-demo-other-categories-1995-2023.png)
 
 <!-- CONSIDER PREPARING THEM AS PLOT_LY PLOTS TO SEE IF THAT WORKS BETTER! -->
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 7
+#| fig-height: 6
 
-```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=7, fig.height=6}
 
-#####  NOT SURE YOU CANNOT USE GGREPEL AND GGTEXT AT THE SAME TIME!!!
+#####  STATIC PLOT OF THE ETHNIC DEMOGRAPHIC CATEGORIES
 
 #####  GENERATE STATIC PLOT WITH THIS CODE, THEN DISPLAY THE PNG ABOVE
 
 #####  COMMENT THIS SECTION OUT WHEN PNG FILE IN PLACE ABOVE
 
 
-# Load libraries
-
+# # Load libraries
+# #
 # library(tidyverse)
-# library(qicharts2)
 # library(haven)
 # library(readxl)
 # library(skimr)
@@ -320,14 +307,16 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 # library(forcats)
 # library(showtext)
 # library(camcorder)
+# library(pdftools)
+# library(magick)
 # 
 # options(scipen = 999)
 # 
 # # Load fonts
 # 
-# # font_add_google("Yanone Kaffeesatz",
-# #                 "yanone")
-# # showtext.auto()
+# font_add_google("Yanone Kaffeesatz",
+#                 "yanone")
+# showtext_auto()
 # 
 # # Start recording
 # gg_record(
@@ -340,7 +329,7 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 # )
 # 
 # # Load the data
-# df2 <- read_csv(file = here::here("data", "SCUC Snapshots 1995 to 2022-LONG.csv"))
+# df2 <- read_csv(file = here::here("data", "20250227 SCUC Snapshots 1995 to 2023-LONG.csv"))
 # 
 # # Specify the desired section
 # desired_section <- "Students"
@@ -390,7 +379,7 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 #   labs(x = "Year",
 #        y = "Percent of Student Body",
 #        title = "Changes in Ethnic Makeup of \nStudents Over Time",
-#        subtitle = "1995 - 2022",
+#        subtitle = "1995 - 2023",
 #        caption = caption
 #        ) +
 # 
@@ -447,21 +436,36 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 # 
 # # Stop recording
 # gg_stop_recording()
+#
+#
+#
+# Convert pdf to png
+# library(pdftools)
+# library(magick)
+# 
+# # Convert first page to image
+# pdf_convert("recording/student-demo-ethnic-categories-1995-2023.pdf", 
+#             pages = 1, 
+#             filenames = "recording/student-demo-ethnic-categories-1995-2023.png",
+#             dpi = 300)
+# 
+
 
 
 ```
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 8
+#| fig-height: 7
 
+#####  STATIC PLOT OF THE 'OTHER' CATEGORIES OF STUDENT DEMOGRAPHICS
 
-
-```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=8, fig.height=7}
-
-#####  YOU CANNOT USE GGREPEL AND GGTEXT AT THE SAME TIME!!!
-
-# Load libraries
-
+# # Load libraries
+# #
 # library(tidyverse)
-# library(qicharts2)
 # library(haven)
 # library(readxl)
 # library(skimr)
@@ -483,14 +487,17 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 # library(forcats)
 # library(showtext)
 # library(camcorder)
+# library(pdftools)
+# library(magick)
+#
 # 
 # options(scipen = 999)
 # 
 # # Load fonts
 # 
-# # font_add_google("Cabin",
-# #                "Cabin")
-# # showtext.auto()
+# font_add_google("Cabin",
+#                "Cabin")
+# showtext.auto()
 # 
 # # Start recording
 # gg_record(
@@ -504,7 +511,7 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 # 
 # 
 # # Load the data
-# df2 <- read_csv(file = here::here("data", "SCUC Snapshots 1995 to 2022-LONG.csv"))
+# df2 <- read_csv(file = here::here("data", "20250227 SCUC Snapshots 1995 to 2023-LONG.csv"))
 # 
 # # Specify the desired section
 # desired_section <- "Students"
@@ -562,7 +569,7 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 #   labs(x = "Year",
 #        y = "Percent of Student Body",
 #        title = "Changes in Other TEA Categories",
-#        subtitle = "1995 - 2022",
+#        subtitle = "1995 - 2023",
 #        caption = caption
 #        ) +
 #   scale_color_manual(values = brewer.pal(n = 5, name = "Dark2")) +
@@ -606,8 +613,24 @@ knitr::include_graphics("gif/student-composition-racing-bar.gif")
 # 
 # # Stop recording
 # gg_stop_recording()
+#
+#
+#
+#
+# Convert pdf to png
+# library(pdftools)
+# library(magick)
+# 
+# # Convert first page to image
+# pdf_convert("recording/student-demo-other-categories-1995-2023.pdf",
+#             pages = 1,
+#             filenames = "recording/student-demo-other-categories-1995-2023.png",
+#             dpi = 300)
+# 
+
+
+
 
 
 
 ```
-
