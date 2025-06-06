@@ -17,7 +17,13 @@ Here is an embedded PNG image
 ![](Total Students in District.png)
 
 
-```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 6
+#| fig-height: 4
+
 
 
 # CREATE A SINGLE PLOT_LY PLOT
@@ -47,10 +53,10 @@ library(webshot2)
 library(readr)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 
@@ -240,10 +246,10 @@ library(webshot2)
 
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -420,10 +426,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -596,10 +602,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 
@@ -780,10 +786,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -962,10 +968,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -1150,10 +1156,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -1295,10 +1301,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -1440,10 +1446,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -1587,10 +1593,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -1732,10 +1738,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -1881,10 +1887,10 @@ library(plotly)
 library(htmlwidgets)
 
 
-# Load SCUC scorecard data for 1995-2022
+# Load SCUC scorecard data for 1995-2023
 
 df2 <- read_csv(file = here::here("data",
-                                  "SCUC Snapshots 1995 to 2022-LONG.csv")
+                                  "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
 desired_section <- "District_Perform"
@@ -1909,7 +1915,8 @@ expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
 y_expand <- y_max + expansion_factor
 
 # Specify titles, etc.
-title <- paste0(df_group$grouping, 
+title <- paste0("Run Chart:  ",
+                df_group$grouping, 
                 ", for Grades - ", 
                 df_group$grade,
                 ", <br>",
@@ -1939,7 +1946,7 @@ plot_ly(data = df_group,
                       value)
         ) %>%
   layout(title = list(text = title, 
-                      font = list(family = "Arial", 
+                      font = list(family = "Cabin", 
                                   size = 20, 
                                   color = "black"), 
                       x = 0.5),
@@ -1988,7 +1995,9 @@ plot_ly(data = df_group,
 
 # print(plot)
 
-# PRINT A SINGLE PLOT_LY PLOT
+
+
+# END OF PRINT A SINGLE PLOT_LY PLOT
 
 ```
 
@@ -2024,8 +2033,8 @@ plot_ly(data = df_group,
 # library(plotly)
 # library(htmlwidgets)
 # 
-# $ Load SCUC scorecard data for 1995-2022
-# df2 <- read_csv(file = here::here("data", "SCUC Snapshots 1995 to 2022-LONG.csv"), show_col_types = FALSE)
+# $ Load SCUC scorecard data for 1995-2023
+# df2 <- read_csv(file = here::here("data", "20250227 SCUC Snapshots 1995 to 2023-LONG.csv"), show_col_types = FALSE)
 # 
 # 
 # # Define a custom label formatting function
@@ -2168,7 +2177,7 @@ plot_ly(data = df_group,
 #  print(plot)
 #  }
 # 
-#   THIS IS A FUNCTION TO MAKE MULTIPLE PLOTLY PLOTS
+#   END OFDS FUNCTION TO MAKE MULTIPLE PLOTLY PLOTS
 
 ```
 
@@ -2199,7 +2208,7 @@ plot_ly(data = df_group,
 # desired_groupings <- c("Total Number of Schools")
 # 
 # # Specify desired years 
-# desired_years <- 1995:2022
+# desired_years <- 1995:2023
 # 
 # # Specify desired level of achievement
 # # desired_level <- c("approaches_above")
@@ -2230,7 +2239,7 @@ plot_ly(data = df_group,
 #   labs(x = "Academic Year-End", y = "Number of Schools") +
 #   ggtitle("The Number of Campuses have Steadily Grown") +
 #   labs(subtitle = "Year: {closest_state}") +
-#   scale_x_continuous(breaks = seq(1995, 2022, by = 1)) +
+#   scale_x_continuous(breaks = seq(1995, 2023, by = 1)) +
 #   theme(legend.position = "none", 
 #         axis.text.x = element_text(angle = 90, hjust = 1, size = 20), 
 #         plot.title = element_text(size = 20, face = "bold"),  # Increased font size and made title bold

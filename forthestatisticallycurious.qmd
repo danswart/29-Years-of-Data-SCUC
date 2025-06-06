@@ -2,7 +2,10 @@
 
 
 
-```{r, echo=FALSE, eval=knitr::is_html_output(), results='asis'}
+```{r, eval=knitr::is_html_output()}
+#| echo: false
+#| results: asis
+
 
 # HTML output
 
@@ -20,7 +23,10 @@ cat('
 
 
 
-```{r, echo=FALSE, eval=knitr::is_latex_output(), results='asis'}
+```{r, eval=knitr::is_latex_output()}
+#| echo: false
+#| results: asis
+
 
 # PDF quote code (LaTeX)
 
