@@ -1,41 +1,38 @@
 ---
-title: "Avg STAAR Scores By Subject - All Grades - Masters - all Groups Combined"
+title: "Standardized Scores By Subject - All Grades - Approaches or Above - all Groups Combined"
 author: "Dan Swart, Trustee, Seat 6"
 editor: 
   markdown: 
     wrap: 72
 ---
 
-<br>
-<br>
-<br>
+<br> <br> <br>
 
 Let your eyes wander over these plots and get a sense of the growth and
-development of the district over the last 28 years. Using just your eyes
+development of the district over the last 29 years. Using just your eyes
 you will gain an appreciation for the accomplishments and growth of the
 district.
 
-<br>
-<br>
-<br>
+<br> <br> <br>
 
 Enjoy!
 
 <br>
 
-
 <br>
 
+## By Subject - All Grades - Approaches or Above - all Groups Combined
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 8
+#| fig-height: 7
 
 
-
-##  Avg STAAR Scores By Subject - All Grades - Masters - all Groups Combined
-
-
-```{r echo=FALSE, warning=FALSE, message=FALSE, fig.width=8, fig.height=7}
-
-# Load Libraries
-
+# # Load Libraries
+# #
 # library(tidyverse)
 # library(qicharts2)
 # library(haven)
@@ -73,29 +70,28 @@ Enjoy!
 # # Define a custom label formatting function
 # custom_label_func <- function(x) {
 #   
-# # For values greater than or equal to 1 million, format without exponential notation and with commas
-# if (any(abs(x[!is.na(x)]) >= 1e6)) {
-#   
-# # For other values, use the default formatting with commas
-# return(format(x, big.mark = ",", scientific = FALSE))
-#   
-# } else {
-#   
-# # For other values, use the default formatting with commas
-# return(format(x, big.mark = ","))
+#   # For values greater than or equal to 1 million, format without exponential notation and with commas
+#   if (any(abs(x[!is.na(x)]) >= 1e6)) {
+#     
+#     # For other values, use the default formatting with commas
+#     return(format(x, big.mark = ",", scientific = FALSE))
+#   } else {
+#     
+#     # For other values, use the default formatting with commas
+#     return(format(x, big.mark = ","))
 #   }
 # }
 # 
 # # Load the data
 # df2 <- read_csv(file = here::here("data", 
-#                                   "SCUC Snapshots 1995 to 2022-LONG.csv")
+#                                   "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
 #                 )
 # 
 # # Filter data frame to include only specified rows 
 # 
 # first_df <- df2 %>%
 #  filter(section == "Standardized_Scores" & 
-#         level_achieved == "Masters" &
+#         level_achieved == "Approaches_or_Above" &
 #         str_detect(sort, "^SUBJ[1-6]$"
 #                    )
 #         ) %>%
@@ -125,7 +121,6 @@ Enjoy!
 # # Specify the caption for the plots
 # caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 # 
-# # Specify the png folder name
 # png_folder <- paste0("png_", desired_section)
 #  
 # # Replace zeros in the value column with NA
@@ -144,31 +139,26 @@ Enjoy!
 # # Check if the group has more than one observation
 # if (nrow(df_group) > 1) {
 #   
-# # Access the unique values for the variables
-# group_category <- unique(df_group$grouping)
-# group_grade <- unique(df_group$grade)
-# group_units <- unique(df_group$units)
-# group_level <- unique(df_group$level_achieved)
+#   # Access the unique values for the variables
+#   group_category <- unique(df_group$grouping)
+#   group_grade <- unique(df_group$grade)
+#   group_units <- unique(df_group$units)
+#   group_level <- unique(df_group$level_achieved)
 # 
 # # Calculate the y-axis range based on the minimum and maximum values of the 'value' column
 # y_min <- min(df_group$value, na.rm = TRUE)
 # y_max <- max(df_group$value, na.rm = TRUE)
 # y_range <- y_max - y_min
-# 
 # # Set the desired maximum range for the y-axis
 # max_y_range <- y_range + .50  # adjust this value based on your preference
-# 
 # # Set the desired expansion factor
-# expansion_factor <- ifelse(y_range < max_y_range, 
-#                            max_y_range - y_range,
-#                            0)
-# 
+# expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
 # # Calculate the y.expand value to set the y-axis limits dynamically
 # y_expand <- y_max + expansion_factor
 # 
 # 
 # # Create dynamic title and subtitle
-# title <- paste0("Average STAAR Scores by Subject",
+# title <- paste0("Run Chart:  Average STAAR Scores by Subject",
 #                 "<br>",
 #                 "Classified as ",
 #                 "<span style='color:darkorchid1'>",
@@ -217,11 +207,11 @@ Enjoy!
 # # Customize features using ggplot2 functions
 # plot <- plot +
 #  scale_y_continuous(labels = scales::percent_format(scale = 1, accuracy = 1),
-#                     limits = c(0, 60),
-#                     breaks = seq(0, 60, 10)) +
+#                     limits = c(20, 100),
+#                     breaks = seq(20, 100, 10)) +
 #   annotate("text",
 #           x = Inf,
-#           y = 50,  # place it in the lower portion of the plot
+#           y = 25,  # place it in the lower portion of the plot
 #           label = "(centerline is the median)",
 #           color = "red",
 #           size = 4,
@@ -329,25 +319,33 @@ Enjoy!
 #   create.dir = TRUE
 #   )
 # )
-
+#
 # Stop recording
 # gg_stop_recording()
-
+#
 # Print the plots
 # walk(plots, ~ print(.$plot))
 
-#  CREATE MULTIPLE STATIC PLOTS
+
+# END OF CREATE MULTIPLE STATIC PLOTS
 
 ```
 
 <!-- UNCOMMENT THIS SECTION AND RUN IT TO  PRINT LIST OF-->
+
 <!-- THE PNG FILES (INDEPENDENTLY OF WHAT IS IN THE  -->
+
 <!-- SPECIFIED PNG STORAGE FOLDER) INTO THE CONSOLE -->
+
 <!-- FOR COPY AND PASTE -->
 
 <!-- Create Rmarkdown syntax to display all png files in specified directory -->
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
 
 ## START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
 ## FOR COPY AND PASTE FROM CONSOLE TO BODY OF QUARTO DOC
@@ -378,7 +376,7 @@ Enjoy!
 # 
 # # Load the data
 # df2 <- read_csv(file = here::here("data",
-#                                   "SCUC Snapshots 1995 to 2022-LONG.csv"
+#                                   "20250227 SCUC Snapshots 1995 to 2023-LONG.csv"
 #                                   )
 #                 )
 # 
@@ -407,12 +405,12 @@ Enjoy!
 # caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 # 
 # 
-# 
+#  
 # # Filter data frame to include only those rows specified by desired section
 # 
 # first_df <- df2 %>%
-#  filter(section == "Standardized_Scores" &
-#         level_achieved == "Masters" &
+#  filter(section == "Standardized_Scores" & 
+#         level_achieved == "Approaches_or_Above" &
 #         str_detect(sort, "^SUBJ[1-6]$"
 #                    )
 #         ) %>%
@@ -473,40 +471,38 @@ Enjoy!
 
 IMAGES FROM PNG FILES
 
+\clearpage
 
+Comment:
+
+![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAllApproaches_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAllMasters19952022.png)
+![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAllApproaches_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAllMasters19952022.png)
+![](png_Standardized_Scores/Standardized_ScoresWritingscoreAllApproaches_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresWritingscoreAllMasters19952022.png)
+![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAllApproaches_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAllMasters19952022.png)
+![](png_Standardized_Scores/Standardized_ScoresSciencescoreAllApproaches_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresSciencescoreAllMasters19952022.png)
-
-\clearpage
-
-Comment:
-
-![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAllMasters19952022.png)
+![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAllApproaches_or_Above19952023.png)

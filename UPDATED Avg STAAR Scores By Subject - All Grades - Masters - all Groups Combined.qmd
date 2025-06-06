@@ -1,5 +1,5 @@
 ---
-title: "Avg STAAR Scores by Ethnic Classification - All Grades - Masters"
+title: "Avg STAAR Scores By Subject - All Grades - Masters - All Groups Combined"
 author: "Dan Swart, Trustee, Seat 6"
 editor: 
   markdown: 
@@ -8,17 +8,20 @@ editor:
 
 <br> <br> <br>
 
-Your eyes are all you need to get a real sense of the steady growth,
-development and accomplishments of the district over the last 29 years.
+Let your eyes wander over these plots and get a sense of the growth and
+development of the district over the last 29 years. Using just your eyes
+you will gain an appreciation for the accomplishments and growth of the
+district.
 
 <br> <br> <br>
 
 Enjoy!
 
-<br> \## Avg STAAR Scores by Ethnic Classification - All Grades -
-Masters
+<br>
 
-<!-- CONSIDER PREPARING THEM AS PLOT_LY PLOTS TO SEE IF THAT WORKS BETTER! -->
+<br>
+
+## Avg STAAR Scores By Subject - All Grades - Masters - all Groups Combined
 
 ```{r}
 #| echo: false
@@ -27,8 +30,9 @@ Masters
 #| fig-width: 8
 #| fig-height: 7
 
+
 # # Load Libraries
-# #
+#
 # library(tidyverse)
 # library(qicharts2)
 # library(haven)
@@ -66,15 +70,16 @@ Masters
 # # Define a custom label formatting function
 # custom_label_func <- function(x) {
 # 
-#   # For values greater than or equal to 1 million, format without exponential notation and with commas
-#   if (any(abs(x[!is.na(x)]) >= 1e6)) {
+# # For values greater than or equal to 1 million, format without exponential notation and with commas
+# if (any(abs(x[!is.na(x)]) >= 1e6)) {
 # 
-#     # For other values, use the default formatting with commas
-#     return(format(x, big.mark = ",", scientific = FALSE))
-#   } else {
+# # For other values, use the default formatting with commas
+# return(format(x, big.mark = ",", scientific = FALSE))
 # 
-#     # For other values, use the default formatting with commas
-#     return(format(x, big.mark = ","))
+# } else {
+# 
+# # For other values, use the default formatting with commas
+# return(format(x, big.mark = ","))
 #   }
 # }
 # 
@@ -88,7 +93,8 @@ Masters
 # first_df <- df2 %>%
 #  filter(section == "Standardized_Scores" &
 #         level_achieved == "Masters" &
-#         str_detect(sort, "^E[1-7]$")
+#         str_detect(sort, "^SUBJ[1-6]$"
+#                    )
 #         ) %>%
 #  arrange(sort)
 # 
@@ -116,6 +122,7 @@ Masters
 # # Specify the caption for the plots
 # caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 # 
+# # Specify the png folder name
 # png_folder <- paste0("png_", desired_section)
 # 
 # # Replace zeros in the value column with NA
@@ -131,31 +138,34 @@ Masters
 # # Define the function with arguments for desired parameters
 # generate_run_chart <- function(df_group, desired_years, desired_grades) {
 # 
-#   # Check if the group has more than one observation
-#   if (nrow(df_group) > 1) {
+# # Check if the group has more than one observation
+# if (nrow(df_group) > 1) {
 # 
-#     # Access the unique values for the variables
-#     group_category <- unique(df_group$grouping)
-#     group_grade <- unique(df_group$grade)
-#     group_units <- unique(df_group$units)
-#     group_level <- unique(df_group$level_achieved)
+# # Access the unique values for the variables
+# group_category <- unique(df_group$grouping)
+# group_grade <- unique(df_group$grade)
+# group_units <- unique(df_group$units)
+# group_level <- unique(df_group$level_achieved)
 # 
-#     # Calculate the y-axis range based on the minimum and maximum values of the 'value' column
-#     y_min <- min(df_group$value, na.rm = TRUE)
-#     y_max <- max(df_group$value, na.rm = TRUE)
-#     y_range <- y_max - y_min
+# # Calculate the y-axis range based on the minimum and maximum values of the 'value' column
+# y_min <- min(df_group$value, na.rm = TRUE)
+# y_max <- max(df_group$value, na.rm = TRUE)
+# y_range <- y_max - y_min
 # 
-#     # Set the desired maximum range for the y-axis
-#     max_y_range <- y_range + .50  # adjust this value based on your preference
+# # Set the desired maximum range for the y-axis
+# max_y_range <- y_range + .50  # adjust this value based on your preference
 # 
-#     # Set the desired expansion factor
-#     expansion_factor <- ifelse(y_range < max_y_range, max_y_range - y_range, 0)
+# # Set the desired expansion factor
+# expansion_factor <- ifelse(y_range < max_y_range,
+#                            max_y_range - y_range,
+#                            0)
 # 
-#     # Calculate the y.expand value to set the y-axis limits dynamically
-#     y_expand <- y_max + expansion_factor
+# # Calculate the y.expand value to set the y-axis limits dynamically
+# y_expand <- y_max + expansion_factor
 # 
-#  # Create dynamic title and subtitle
-# title <- paste0("Run Chart:  Average STAAR Scores for Students",
+# 
+# # Create dynamic title and subtitle
+# title <- paste0("Run Chart:  Average STAAR Scores by Subject",
 #                 "<br>",
 #                 "Classified as ",
 #                 "<span style='color:darkorchid1'>",
@@ -182,38 +192,39 @@ Masters
 #                            )
 #                      )
 # 
+# 
 # # Create the chart with qicharts2
 # plot <- qic(
-#   x = df_group$year,
-#   y = df_group$value,
-#   chart = "run",
-#   decimals = 0,
-#   point.size = 2.5,
-#   y.expand = y_expand,
-#   scales = "free_y",
-#   show.grid = TRUE,
-#   ylab = df_group$units,
-#   title = title,
-#   subtitle = subtitle,
-#   caption = caption,
-#   show.labels = TRUE,
-#   xlab = 'Academic Year-Ended'
+#  x = df_group$year,
+#  y = df_group$value,
+#  chart = "run",
+#  decimals = 0,
+#  point.size = 2.5,
+#  y.expand = y_expand,
+#  scales = "free_y",
+#  show.grid = TRUE,
+#  ylab = df_group$units,
+#  title = title,
+#  subtitle = subtitle,
+#  caption = caption,
+#  show.labels = TRUE,
+#  xlab = 'Academic Year-Ended'
 # )
 # 
 # # Customize features using ggplot2 functions
 # plot <- plot +
-#   scale_y_continuous(labels = scales::percent_format(scale = 1, accuracy = 1),
-#                      limits = c(0, 60),
-#                      breaks = seq(0, 60, 10)) +
-#    annotate("text",
-#            x = Inf,
-#            y = 55,  # place it in the lower portion of the plot
-#            label = "(centerline is the median)",
-#            color = "red",
-#            size = 4,
-#            hjust = 1,  # Right align
-#            vjust = 0   # Top align
-#            ) +
+#  scale_y_continuous(labels = scales::percent_format(scale = 1, accuracy = 1),
+#                     limits = c(0, 60),
+#                     breaks = seq(0, 60, 10)) +
+#   annotate("text",
+#           x = Inf,
+#           y = 50,  # place it in the lower portion of the plot
+#           label = "(centerline is the median)",
+#           color = "red",
+#           size = 4,
+#           hjust = 1,  # Right align
+#           vjust = 0   # Top align
+#           ) +
 # 
 # theme_minimal(base_size = 16) +
 # theme(legend.position = "none") +
@@ -283,7 +294,6 @@ Masters
 #                   ".png"
 #                   )
 # 
-# 
 #  # Return both the plot and the filename
 #  return(list(plot = plot, filename = filename))
 # 
@@ -316,14 +326,16 @@ Masters
 #   create.dir = TRUE
 #   )
 # )
-# #
+
 # # Stop recording
 # # gg_stop_recording()
-# 
+#
 # # Print the plots
 # walk(plots, ~ print(.$plot))
-# 
-# #  END OF CREATE MULTIPLE STATIC PLOTS
+
+
+
+#  END OF CREATE MULTIPLE STATIC PLOTS
 
 ```
 
@@ -343,11 +355,11 @@ Masters
 #| message: false
 
 
-## START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
+## TO START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
 ## FOR COPY AND PASTE FROM CONSOLE TO BODY OF QUARTO DOC
 
 # Load Libraries
- 
+
 # library(tidyverse)
 # library(qicharts2)
 # library(haven)
@@ -401,12 +413,14 @@ Masters
 # caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 # 
 # 
+# 
 # # Filter data frame to include only those rows specified by desired section
 # 
 # first_df <- df2 %>%
 #  filter(section == "Standardized_Scores" &
 #         level_achieved == "Masters" &
-#         str_detect(sort, "^E[1-7]$")
+#         str_detect(sort, "^SUBJ[1-6]$"
+#                    )
 #         ) %>%
 #  arrange(sort)
 # 
@@ -461,7 +475,6 @@ Masters
 # 
 # }
 
-
 ```
 
 IMAGES FROM PNG FILES
@@ -470,40 +483,34 @@ IMAGES FROM PNG FILES
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresAllSubjectsscoreAllMasters19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresReading-ELAscoreAllMasters19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresWritingscoreAllMasters19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresMathematicsscoreAllMasters19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresSciencescoreAllMasters19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllMasters19952023.png)
-
-\clearpage
-
-Comment:
-
-![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresSocialStudiesscoreAllMasters19952023.png)

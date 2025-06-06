@@ -1,5 +1,5 @@
 ---
-title: "Avg STAAR Scores by Ethnic Classification - All Grades - Masters"
+title: "Avg STAAR Scores by Ethnic Classification - All Grades - Meets or Above"
 author: "Dan Swart, Trustee, Seat 6"
 editor: 
   markdown: 
@@ -8,15 +8,17 @@ editor:
 
 <br> <br> <br>
 
-Your eyes are all you need to get a real sense of the steady growth,
-development and accomplishments of the district over the last 29 years.
+Let your eyes wander over these plots and get a sense of the growth and
+development of the district over the last 29 years. Using just your eyes
+you will gain an appreciation for the accomplishments and growth of the
+district.
 
 <br> <br> <br>
 
 Enjoy!
 
-<br> \## Avg STAAR Scores by Ethnic Classification - All Grades -
-Masters
+<br> \## Avg STAAR Scores by Ethnic Classification - All Grades - Meets
+or Above
 
 <!-- CONSIDER PREPARING THEM AS PLOT_LY PLOTS TO SEE IF THAT WORKS BETTER! -->
 
@@ -27,8 +29,9 @@ Masters
 #| fig-width: 8
 #| fig-height: 7
 
+
 # # Load Libraries
-# #
+#
 # library(tidyverse)
 # library(qicharts2)
 # library(haven)
@@ -65,30 +68,30 @@ Masters
 # 
 # # Define a custom label formatting function
 # custom_label_func <- function(x) {
-# 
+#   
 #   # For values greater than or equal to 1 million, format without exponential notation and with commas
 #   if (any(abs(x[!is.na(x)]) >= 1e6)) {
-# 
+#     
 #     # For other values, use the default formatting with commas
 #     return(format(x, big.mark = ",", scientific = FALSE))
 #   } else {
-# 
+#     
 #     # For other values, use the default formatting with commas
 #     return(format(x, big.mark = ","))
 #   }
 # }
 # 
 # # Load the data
-# df2 <- read_csv(file = here::here("data",
+# df2 <- read_csv(file = here::here("data", 
 #                                   "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
 #                 )
 # 
-# # Filter data frame to include only specified rows
+# # Filter data frame to include only specified rows 
 # 
 # first_df <- df2 %>%
-#  filter(section == "Standardized_Scores" &
-#         level_achieved == "Masters" &
-#         str_detect(sort, "^E[1-7]$")
+#  filter(section == "Standardized_Scores" & 
+#         level_achieved == "Meets_or_Above" &
+#         str_detect(sort, "^E[1-7]$") 
 #         ) %>%
 #  arrange(sort)
 # 
@@ -117,10 +120,10 @@ Masters
 # caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 # 
 # png_folder <- paste0("png_", desired_section)
-# 
+#  
 # # Replace zeros in the value column with NA
 # first_df$value <- ifelse(first_df$value == 0, NA, first_df$value)
-# 
+#  
 # 
 # # Group the data frame and sort by the desired sorting column
 # first_df_grouped <- first_df %>%
@@ -130,10 +133,10 @@ Masters
 # 
 # # Define the function with arguments for desired parameters
 # generate_run_chart <- function(df_group, desired_years, desired_grades) {
-# 
+#   
 #   # Check if the group has more than one observation
 #   if (nrow(df_group) > 1) {
-# 
+#     
 #     # Access the unique values for the variables
 #     group_category <- unique(df_group$grouping)
 #     group_grade <- unique(df_group$grade)
@@ -154,7 +157,7 @@ Masters
 #     # Calculate the y.expand value to set the y-axis limits dynamically
 #     y_expand <- y_max + expansion_factor
 # 
-#  # Create dynamic title and subtitle
+# # Create dynamic title and subtitle
 # title <- paste0("Run Chart:  Average STAAR Scores for Students",
 #                 "<br>",
 #                 "Classified as ",
@@ -182,6 +185,7 @@ Masters
 #                            )
 #                      )
 # 
+# 
 # # Create the chart with qicharts2
 # plot <- qic(
 #   x = df_group$year,
@@ -200,20 +204,20 @@ Masters
 #   xlab = 'Academic Year-Ended'
 # )
 # 
-# # Customize features using ggplot2 functions
-# plot <- plot +
-#   scale_y_continuous(labels = scales::percent_format(scale = 1, accuracy = 1),
-#                      limits = c(0, 60),
-#                      breaks = seq(0, 60, 10)) +
-#    annotate("text",
-#            x = Inf,
-#            y = 55,  # place it in the lower portion of the plot
-#            label = "(centerline is the median)",
-#            color = "red",
-#            size = 4,
-#            hjust = 1,  # Right align
-#            vjust = 0   # Top align
-#            ) +
+#     # Customize features using ggplot2 functions
+#     plot <- plot +
+#       scale_y_continuous(labels = scales::percent_format(scale = 1, accuracy = 1),
+#                          limits = c(20, 100),
+#                          breaks = seq(20, 100, 10)) +
+#        annotate("text",
+#                x = Inf,
+#                y = 25,  # place it in the lower portion of the plot
+#                label = "(centerline is the median)",
+#                color = "red",
+#                size = 4,
+#                hjust = 1,  # Right align
+#                vjust = 0   # Top align
+#                ) +
 # 
 # theme_minimal(base_size = 16) +
 # theme(legend.position = "none") +
@@ -227,10 +231,10 @@ Masters
 #          face = "bold",
 #          # family = "Roboto",
 #          lineheight = 1.3,
-#          margin = margin(0, 0, 0.25, 0, "lines"
+#          margin = margin(0, 0, 0.25, 0, "lines"           
 #                          )
 #          ),
-# 
+#      
 #       plot.subtitle = ggtext::element_markdown(
 #          color = "darkgreen",
 #          size = rel(1.10),
@@ -239,7 +243,7 @@ Masters
 #          margin = margin(0, 0, 0.5, 0, "lines"
 #                          )
 #          ),
-# 
+#     
 #       plot.caption = element_text(color = "darkgreen",
 #                                   size = rel(1.0),
 #                                   face = "bold",
@@ -248,7 +252,7 @@ Masters
 #                                   margin = margin(0, 0, 0.5, 0, "lines"
 #                                                   )
 #                                   ),
-# 
+#       
 #       strip.text = element_text(# family = "Roboto",
 #                                   color = "orange",
 #                                   size = rel(1.1),
@@ -256,39 +260,38 @@ Masters
 #                                   margin = margin(2, 0, 0.5, 0, "lines"
 #                                                   )
 #                                   ),
-# 
+#       
 #        axis.text = element_text(color = "black"
 #                                 ),
 #        panel.background = element_rect(fill = "white", color = NA),
 #        plot.background = element_rect(fill = "white", color = NA)
 #   )
+#     
+#   # Display the plot
+#  print(plot)
 # 
-# # Display the plot
-# print(plot)
-# 
-# # Define the filename
-# filename <- paste0(png_folder,
-#                   "/",
-#                   gsub(" ",
-#                        "",
-#                        paste0(desired_section,
-#                               group_category,
-#                               group_units,
-#                               group_grade,
-#                               group_level,
-#                               min(desired_years),
-#                               max(desired_years)
-#                               )
-#                        ),
-#                   ".png"
-#                   )
-# 
+#  # Define the filename
+#  filename <- paste0(png_folder,
+#                     "/",
+#                     gsub(" ",
+#                          "",
+#                          paste0(desired_section,
+#                                 group_category,
+#                                 group_units,
+#                                 group_grade,
+#                                 group_level,
+#                                 min(desired_years),
+#                                 max(desired_years)
+#                                 )
+#                          ),
+#                     ".png"
+#                     )
 # 
 #  # Return both the plot and the filename
 #  return(list(plot = plot, filename = filename))
 # 
 #   } else {
-# 
+#     
 #  # Return NULL for groups with only one observation
 #  return(NULL)
 #   }
@@ -316,14 +319,14 @@ Masters
 #   create.dir = TRUE
 #   )
 # )
-# #
+# 
 # # Stop recording
 # # gg_stop_recording()
 # 
 # # Print the plots
 # walk(plots, ~ print(.$plot))
-# 
-# #  END OF CREATE MULTIPLE STATIC PLOTS
+
+#  END CREATE MULTIPLE STATIC PLOTS
 
 ```
 
@@ -337,11 +340,7 @@ Masters
 
 <!-- Create Rmarkdown syntax to display all png files in specified directory -->
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 
 ## START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
 ## FOR COPY AND PASTE FROM CONSOLE TO BODY OF QUARTO DOC
@@ -405,7 +404,7 @@ Masters
 # 
 # first_df <- df2 %>%
 #  filter(section == "Standardized_Scores" &
-#         level_achieved == "Masters" &
+#         level_achieved == "Meets_or_Above" &
 #         str_detect(sort, "^E[1-7]$")
 #         ) %>%
 #  arrange(sort)
@@ -470,40 +469,40 @@ IMAGES FROM PNG FILES
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresWhitescoreAllMeets_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresHispanicscoreAllMeets_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresAfricanAmericanscoreAllMeets_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresAmericanIndianscoreAllMeets_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresAsianscoreAllMeets_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_ScoresPacificIslanderscoreAllMeets_or_Above19952023.png)
 
 \clearpage
 
 Comment:
 
-![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllMasters19952023.png)
+![](png_Standardized_Scores/Standardized_Scores2orMoreRacesscoreAllMeets_or_Above19952023.png)
