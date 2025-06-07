@@ -3,7 +3,7 @@ project:
   execute-dir: project
 toc: true
 number-sections: false
-bibliography: references.bib
+bibliography: 2023 references.bib
 highlight-style: pygments
 
 book:
@@ -44,37 +44,37 @@ book:
   chapters:
     - index.qmd
 
-    - dedication.qmd
+    - 2023 dedication.qmd
 
-    - acknowledgements.qmd
+    - 2023 acknowledgements.qmd
 
-    - how_to_use.qmd
+    - 2023 how_to_use.qmd
 
-    - forthestatisticallycurious.qmd
+    - 2023 forthestatisticallycurious.qmd
 
     - part: "District Performance"
       chapters:
-        - district_perform.qmd
+        - 2023 district_perform.qmd
 
     - part: "Students"
       chapters:
-        - student_demo.qmd
+        - 2023 student_demo.qmd
 
     - part: "Standardized Scores"
       chapters:
-        - STAAR Scores by Subject.qmd
-        - STAAR Scores by Student Grouping.qmd
-        - sat_act.qmd
+        - 2023 STAAR Scores by Subject.qmd
+        - 2023 STAAR Scores by Student Grouping.qmd
+        - 2023 sat_act.qmd
 
     - part: "Personnel"
       chapters:
-        - teachers.qmd
-        - staff.qmd
+        - 2023 teachers.qmd
+        - 2023 staff.qmd
 
     - part: "Finances"
       chapters:
-       - taxes_and_revenues.qmd
-       - expenses.qmd
+       - 2023 taxes_and_revenues.qmd
+       - 2023 expenses.qmd
 
 
 
