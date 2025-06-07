@@ -27,9 +27,9 @@ book:
   repo-actions: [edit, issue, source]
   sharing: [twitter, facebook, linkedin]
   image: unique-1-yellow-locker.jpg
-  comments:
-   giscus:
-     repo: danswart/29-Years-of-Data-SCUC
+  # comments:
+  #  giscus:
+  #    repo: danswart/29-Years-of-Data-SCUC
   open-graph:
     image: https://github.com/danswart/29-Years-of-Data-SCUC/unique-1-yellow-locker.jpg
     description: A compilation of 29 years of TEA data for the SCUC-ISD.
