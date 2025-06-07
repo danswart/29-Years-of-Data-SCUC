@@ -16,7 +16,7 @@ book:
   downloads: [pdf, docx, epub]
   description: "Improved Data Analysis Tools for School Districts"
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history, continuous improvement, control charts, data analysis
-  url: https://danswart.quarto.pub/29yearsofdatascuc/
+  url: https://29yearsofdatascuc.netlify.app/
   sidebar:
     search: true
     collapse-level: 3
