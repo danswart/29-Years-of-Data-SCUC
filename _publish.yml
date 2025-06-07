@@ -1,4 +1,4 @@
 - source: project
-  nentlify:
-      id: d6c2ad57-0aed-4c1b-8429-f8a791edca90
+  netlify:
+    - id: d6c2ad57-0aed-4c1b-8429-f8a791edca90
       url: 'https://29yearsofdatascuc.netlify.app/
