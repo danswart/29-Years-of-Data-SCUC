@@ -1,10 +1,10 @@
 project:
   type: book
   output-dir: _book
-toc: true
-number-sections: false
-bibliography: 2023 references.bib
-highlight-style: pygments
+# toc: true
+# number-sections: false
+# # bibliography: references.bib
+# highlight-style: pygments
 
 book:
   title: "***THE ROLE OF DATA ANALYSIS IN SCHOOL DISTRICT LEADERSHIP***"
@@ -14,14 +14,14 @@ book:
   reader-mode: true
   search: true
   downloads: [pdf, docx, epub]
-  description: "Improved Data Analysis Tools for School Districts"
+  description: "Introducing Improved Data Analysis Methods for School Districts"
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history, continuous improvement, control charts, data analysis
-  url: https://29yearsofdatascuc.netlify.app/
+  # url: https://danswart.quarto.pub/scuc28yearsofdata/
   sidebar:
     search: true
     collapse-level: 3
     pinned: true
-  repo-url: https://github.com/danswart/29-Years-of-Data-SCUC
+  # repo-url: https://github.com/danswart/SCUC-Book---28-Years-of-Data
   # repo-subdir: _book
   # repo-branch: master
   repo-actions: [edit, issue, source]
@@ -32,7 +32,7 @@ book:
   #    repo: danswart/29-Years-of-Data-SCUC
   open-graph:
     image: https://github.com/danswart/29-Years-of-Data-SCUC/unique-1-yellow-locker.jpg
-    description: A compilation of 29 years of TEA data for the SCUC-ISD.
+    description: A compilation of 28 years of TEA data for the SCUC-ISD.
   page-footer:
     left: |
       This book was written by Dan Swart, CPA (ret) while serving as Trustee (Place 6), SCUC-ISD
@@ -80,7 +80,7 @@ book:
 
 format:
   html:
-    css: [swart-20250327.css, tachyons.min.css, r-colors.css]
+    css: [swart-20240104.css, tachyons.min.css, r-colors.css]
     theme:
       - cosmo
     grid:
@@ -88,51 +88,51 @@ format:
       body-width: 700px     # Decrease this value to make the main content area smaller
       margin-width: 500px
     max-width: 2400px # Increase this value to make the overall page wider
-    fontsize: 14pt # Adjust this value to increase or decrease the base font size
+    fontsize: 14pt # Adjust this value to increase or decrease the base font sizeself-contained: true
     embed-resources: false
     html-math-method: katex
     callout-appearance: simple
-
-  pdf:
-    documentclass: scrbook
-    include-in-header: preamble.tex
-    classoption: 16pt
-    includes:
-      in_header: latex/preamble.tex
-      before_body: latex/before_body.tex
-      after_body: latex/after_body.tex
-      colorlinks: true
-    fontsize: 12pt
-    fontfamily: palatino
-    margin-left: 10mm
-    margin-right: 10mm
-    before_body: latex/before_body.tex
-    after_body: latex/after_body.tex
-    keep_tex: true
-    dev: "cairo_pdf"
-    latex_engine: xelatex
-    citation_package: natbib
-    pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
-    quote_footer: ["\\hspace*{\\fill} ", ""]
-    toc_unnumbered: true
-    number_sections: false
-    header-includes:
-    - \usepackage{geometry}
-    - \geometry{top=1.00in,left=.50in,bottom=1.00in,right=.50in}
-    - \setlength\parindent{0.25in}
-    - \usepackage{xcolor}
-    - \usepackage{tcolorbox}
-    - \usepackage{ragged2e}
-    - \usepackage{hyperref}
-    - \usepackage{float}
-    - \hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=BlueViolet, citecolor=BrickRed}
-    - \urlstyle{same}
-    - \graphicspath{{pbc}{img}}
-    - \usepackage{caption}
-    - \captionsetup[figure]{font=Large}
-    - \captionsetup{font=Large}
-    - \usepackage{longtable}
-    - \usepackage{placeins}
+#
+#   pdf:
+#     documentclass: scrbook
+#     include-in-header: preamble.tex
+#     classoption: 16pt
+#     includes:
+#       in_header: latex/preamble.tex
+#       before_body: latex/before_body.tex
+#       after_body: latex/after_body.tex
+#       colorlinks: true
+#     fontsize: 12pt
+#     fontfamily: palatino
+#     margin-left: 10mm
+#     margin-right: 10mm
+#     before_body: latex/before_body.tex
+#     after_body: latex/after_body.tex
+#     keep_tex: true
+#     dev: "cairo_pdf"
+#     latex_engine: xelatex
+#     citation_package: natbib
+#     pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
+#     quote_footer: ["\\hspace*{\\fill} ", ""]
+#     toc_unnumbered: true
+#     number_sections: false
+#     header-includes:
+#     - \usepackage{geometry}
+#     - \geometry{top=1.00in,left=.50in,bottom=1.00in,right=.50in}
+#     - \setlength\parindent{0.25in}
+#     - \usepackage{xcolor}
+#     - \usepackage{tcolorbox}
+#     - \usepackage{ragged2e}
+#     - \usepackage{hyperref}
+#     - \usepackage{float}
+#     - \hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=BlueViolet, citecolor=BrickRed}
+#     - \urlstyle{same}
+#     - \graphicspath{{pbc}{img}}
+#     - \usepackage{caption}
+#     - \captionsetup[figure]{font=Large}
+#     - \captionsetup{font=Large}
+#     - \usepackage{longtable}
+#     - \usepackage{placeins}
 linestretch: 1
 fontsize: 18pt
 knitr:
