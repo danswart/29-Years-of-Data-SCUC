@@ -1,6 +1,7 @@
 project:
   type: book
-  output-dir: docs
+  # output-dir: docs
+  output-dir: _book
 # toc: true
 # number-sections: false
 # # bibliography: references.bib
