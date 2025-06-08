@@ -1,7 +1,8 @@
 [build]
-  command = "quarto render"
+  command = """
+    curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.57/quarto-1.5.57-linux-amd64.deb
+    sudo dpkg -i quarto-1.5.57-linux-amd64.deb
+    quarto --version
+    quarto render
+  """
   publish = "_book"
-
-[build.environment]
-  # Use a build image that has Quarto pre-installed
-  BUILD_IMAGE = "quarto/ubuntu"
