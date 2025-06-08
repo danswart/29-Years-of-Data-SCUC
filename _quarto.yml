@@ -19,15 +19,14 @@ book:
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history, continuous improvement, control charts, data analysis
   site-url: "https://29yearsofdatascuc.netlify.app"
   repo-url: "https://github.com/dswart/29-Years-of-Data-SCUC"
+  repo-subdir: _book
+  repo-branch: main
   repo-actions: [edit, source, issue]
   sidebar:
     search: true
     collapse-level: 3
     pinned: true
-  repo-url: https://29yearsofdatascuc.netlify.app/
-  repo-subdir: _book
-  repo-branch: main
-  repo-actions: [edit, issue, source]
+
   sharing: [twitter, facebook, linkedin]
   image: unique-1-yellow-locker.jpg
   # comments:
