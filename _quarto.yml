@@ -2,10 +2,10 @@ project:
   type: book
   # output-dir: docs
   output-dir: _book
-# toc: true
-# number-sections: false
-# # bibliography: references.bib
-# highlight-style: pygments
+toc: true
+number-sections: false
+# bibliography: references.bib
+highlight-style: pygments
 
 book:
   title: "***THE ROLE OF DATA ANALYSIS IN SCHOOL DISTRICT LEADERSHIP***"
@@ -17,14 +17,14 @@ book:
   downloads: [pdf, docx, epub]
   description: "Introducing Improved Data Analysis Methods for School Districts"
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history, continuous improvement, control charts, data analysis
-  # url: https://danswart.quarto.pub/scuc28yearsofdata/
+  url: https://29yearsofdatascuc.netlify.app/
   sidebar:
     search: true
     collapse-level: 3
     pinned: true
-  # repo-url: https://github.com/danswart/SCUC-Book---28-Years-of-Data
-  # repo-subdir: _book
-  # repo-branch: master
+  repo-url: https://29yearsofdatascuc.netlify.app/
+  repo-subdir: _book
+  repo-branch: main
   repo-actions: [edit, issue, source]
   sharing: [twitter, facebook, linkedin]
   image: unique-1-yellow-locker.jpg
@@ -93,47 +93,50 @@ format:
     embed-resources: false
     html-math-method: katex
     callout-appearance: simple
-#
-#   pdf:
-#     documentclass: scrbook
-#     include-in-header: preamble.tex
-#     classoption: 16pt
-#     includes:
-#       in_header: latex/preamble.tex
-#       before_body: latex/before_body.tex
-#       after_body: latex/after_body.tex
-#       colorlinks: true
-#     fontsize: 12pt
-#     fontfamily: palatino
-#     margin-left: 10mm
-#     margin-right: 10mm
-#     before_body: latex/before_body.tex
-#     after_body: latex/after_body.tex
-#     keep_tex: true
-#     dev: "cairo_pdf"
-#     latex_engine: xelatex
-#     citation_package: natbib
-#     pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
-#     quote_footer: ["\\hspace*{\\fill} ", ""]
-#     toc_unnumbered: true
-#     number_sections: false
-#     header-includes:
-#     - \usepackage{geometry}
-#     - \geometry{top=1.00in,left=.50in,bottom=1.00in,right=.50in}
-#     - \setlength\parindent{0.25in}
-#     - \usepackage{xcolor}
-#     - \usepackage{tcolorbox}
-#     - \usepackage{ragged2e}
-#     - \usepackage{hyperref}
-#     - \usepackage{float}
-#     - \hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=BlueViolet, citecolor=BrickRed}
-#     - \urlstyle{same}
-#     - \graphicspath{{pbc}{img}}
-#     - \usepackage{caption}
-#     - \captionsetup[figure]{font=Large}
-#     - \captionsetup{font=Large}
-#     - \usepackage{longtable}
-#     - \usepackage{placeins}
+
+  pdf:
+    documentclass: scrbook
+    include-in-header: preamble.tex
+    classoption: 16pt
+    includes:
+      in_header: latex/preamble.tex
+      before_body: latex/before_body.tex
+      after_body: latex/after_body.tex
+      colorlinks: true
+    fontsize: 12pt
+    fontfamily: palatino
+    margin-left: 10mm
+    margin-right: 10mm
+    before_body: latex/before_body.tex
+    after_body: latex/after_body.tex
+    keep_tex: true
+    dev: "cairo_pdf"
+    latex_engine: xelatex
+    citation_package: natbib
+    pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
+    quote_footer: ["\\hspace*{\\fill} ", ""]
+    toc_unnumbered: true
+    number_sections: false
+    header-includes:
+    - \usepackage{geometry}
+    - \geometry{top=1.00in,left=.50in,bottom=1.00in,right=.50in}
+    - \setlength\parindent{0.25in}
+    - \usepackage{xcolor}
+    - \usepackage{tcolorbox}
+    - \usepackage{ragged2e}
+    - \usepackage{hyperref}
+    - \usepackage{float}
+    - \hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=BlueViolet, citecolor=BrickRed}
+    - \urlstyle{same}
+    - \graphicspath{{pbc}{img}}
+    - \usepackage{caption}
+    - \captionsetup[figure]{font=Large}
+    - \captionsetup{font=Large}
+    - \usepackage{longtable}
+    - \usepackage{placeins}
+
+  epub: default
+
 linestretch: 1
 fontsize: 18pt
 knitr:
