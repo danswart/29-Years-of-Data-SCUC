@@ -18,7 +18,7 @@ book:
   description: "Introducing Improved Data Analysis Methods for School Districts"
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history, continuous improvement, control charts, data analysis
   site-url: "https://29yearsofdatascuc.netlify.app"
-  repo-url: "https://github.com/dswart/29-Years-of-Data-SCUC"
+  repo-url: "https://github.com/danswart/29-Years-of-Data-SCUC"
   repo-subdir: _book
   repo-branch: main
   repo-actions: [edit, source, issue]
