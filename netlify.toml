@@ -1,3 +1,7 @@
 [build]
   command = "quarto render"
   publish = "_book"
+
+[build.environment]
+  # Use a build image that has Quarto pre-installed
+  BUILD_IMAGE = "quarto/ubuntu"
