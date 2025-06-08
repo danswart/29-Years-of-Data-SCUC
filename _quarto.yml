@@ -1,6 +1,6 @@
 project:
   type: book
-  execute-dir: project
+  output-dir: _book
 toc: true
 number-sections: false
 bibliography: 2023 references.bib
@@ -88,7 +88,7 @@ format:
       body-width: 700px     # Decrease this value to make the main content area smaller
       margin-width: 500px
     max-width: 2400px # Increase this value to make the overall page wider
-    fontsize: 14pt # Adjust this value to increase or decrease the base font sizeself-contained: true
+    fontsize: 14pt # Adjust this value to increase or decrease the base font size
     embed-resources: false
     html-math-method: katex
     callout-appearance: simple
