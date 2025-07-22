@@ -14,7 +14,7 @@ book:
   date: "June 5, 2025"
   reader-mode: true
   search: true
-  downloads: [pdf, docx, epub]
+  downloads: [pdf, epub]
   description: "Introducing Improved Data Analysis Methods for School Districts"
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history, continuous improvement, control charts, data analysis
   site-url: "https://29yearsofdatascuc.netlify.app"
