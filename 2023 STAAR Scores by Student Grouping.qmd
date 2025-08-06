@@ -6,20 +6,19 @@ editor:
     wrap: 72
 ---
 
+<br>
+<br>
+
 Summarizing performance by skin color, ethnicity, sex, economic level,
 etc. was mandated years ago by federal law. While the drafters of the
 law may have meant well, the results are amazingly destructive and
 devisive.
 
-The practice is utterly politically motivated. Among other flaws, it
-presupposes that the groups are 'all alike' within the group. Ethnic
-groups labeled as 'black' are no more 'all alike' than all Hispanics,
+This practice (euphemistically called 'disaggregation') is utterly politically motivated. Among its many flaws, it presupposes that the groups are 'all alike' within the group.  Ethnic groups labeled as 'black' are no more 'all alike' than all Hispanics,
 Asians, Whites or Pacific Islanders are 'all alike.'
 
-Yet, comparing groups this way assumes all members of the groups **ARE**
-all alike within the group and that the meaningful differences are
-between the groups. Time and time again studies show that most
-meaningful differences are within the groups, not between them.
+Yet, comparing groups this way ***assumes*** all members of the groups **ARE**
+all alike within the group and that the meaningful differences are between the groups. Time and time again studies show that most meaningful differences are within the groups, not between them.
 
 Led by academia, it has become politically correct to seize upon any
 'differences' between groups as proof positive that some kind of racism

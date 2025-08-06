@@ -26,8 +26,12 @@ Approaches or Above
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-width: 8
-#| fig-height: 7
+#| fig-width: 12
+#| fig-height: 10
+
+
+# FIRST, choose pdf or png files in the code below
+# THEN, uncomment and run the code chunk
 
 
 # Load Libraries
@@ -60,40 +64,43 @@ options(scipen = 999)
 # gg_record(
 #   dir = "recording",
 #   device = "pdf",
-#   width = 8,
-#   height = 7,
+#   width = 12,
+#   height = 10,
 #   units = "in",
 #   dpi = 300
 # )
 
 # Define a custom label formatting function
 custom_label_func <- function(x) {
-  
+
   # For values greater than or equal to 1 million, format without exponential notation and with commas
   if (any(abs(x[!is.na(x)]) >= 1e6)) {
-    
+
     # For other values, use the default formatting with commas
     return(format(x, big.mark = ",", scientific = FALSE))
   } else {
-    
+
     # For other values, use the default formatting with commas
     return(format(x, big.mark = ","))
   }
 }
 
+
 # Load the data
-df2 <- read_csv(file = here::here("data", 
+df2 <- read_csv(file = here::here("data",
                                   "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
                 )
 
-# Filter data frame to include only specified rows 
+
+# Filter data frame to include only specified rows
 
 first_df <- df2 %>%
- filter(section == "Standardized_Scores" & 
+ filter(section == "Standardized_Scores" &
         level_achieved == "Approaches_or_Above" &
-        str_detect(sort, "^E[1-7]$") 
+        str_detect(sort, "^E[1-7]$")
         ) %>%
  arrange(sort)
+
 
 # Specify the desired section
 desired_section <- "Standardized_Scores"
@@ -119,11 +126,21 @@ desired_order <- unique(first_df$sort)
 # Specify the caption for the plots
 caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 
-png_folder <- paste0("png_", desired_section)
- 
+
+# # Specify the png folder name
+# png_folder <- paste0("png_", desired_section)
+#
+
+
+# Specify the pdf folder name
+pdf_folder <- paste0("pdf_",
+                     desired_section)
+
+
+
 # Replace zeros in the value column with NA
 first_df$value <- ifelse(first_df$value == 0, NA, first_df$value)
- 
+
 
 # Group the data frame and sort by the desired sorting column
 first_df_grouped <- first_df %>%
@@ -133,10 +150,10 @@ first_df_grouped <- first_df %>%
 
 # Define the function with arguments for desired parameters
 generate_run_chart <- function(df_group, desired_years, desired_grades) {
-  
+
 # Check if the group has more than one observation
 if (nrow(df_group) > 1) {
-  
+
 # Access the unique values for the variables
 group_category <- unique(df_group$grouping)
 group_grade <- unique(df_group$grade)
@@ -185,6 +202,8 @@ subtitle <- paste0("In Grades - ",
                            )
                      )
 
+
+
 # Create the chart with qicharts2
 plot <- qic(
   x = df_group$year,
@@ -230,10 +249,10 @@ theme(plot.title.position = "panel",
          face = "bold",
          # family = "Roboto",
          lineheight = 1.3,
-         margin = margin(0, 0, 0.25, 0, "lines"           
+         margin = margin(0, 0, 0.25, 0, "lines"
                          )
          ),
-     
+
       plot.subtitle = ggtext::element_markdown(
          color = "darkgreen",
          size = rel(1.10),
@@ -242,7 +261,7 @@ theme(plot.title.position = "panel",
          margin = margin(0, 0, 0.5, 0, "lines"
                          )
          ),
-    
+
       plot.caption = element_text(color = "darkgreen",
                                   size = rel(1.0),
                                   face = "bold",
@@ -251,7 +270,7 @@ theme(plot.title.position = "panel",
                                   margin = margin(0, 0, 0.5, 0, "lines"
                                                   )
                                   ),
-      
+
       strip.text = element_text(# family = "Roboto",
                                   color = "orange",
                                   size = rel(1.1),
@@ -259,31 +278,55 @@ theme(plot.title.position = "panel",
                                   margin = margin(2, 0, 0.5, 0, "lines"
                                                   )
                                   ),
-      
+
        axis.text = element_text(color = "black"
                                 ),
        panel.background = element_rect(fill = "white", color = NA),
        plot.background = element_rect(fill = "white", color = NA)
   )
 
+
 # Display the plot ('plot' is a function inside a function, not a ggplot2 object)
 # The last code snippet feeds data into the function that then executes this
 # function and displays the plots in the Plots tab.
 
-# This is the snippet below that triggers the generate_run_chart function
+
+# The snippet below triggers the generate_run_chart function
 #  # Apply the function with desired parameters for each category
+#
 # plots <- map(
 #   first_df_grouped,
 #   generate_run_chart,
 #   desired_years = desired_years,
 #   desired_grades = desired_grades
 # )
-# 
+#
 
 # print(plot)
 
-# Define the filename
-filename <- paste0(png_folder,
+# # Define the png filename
+# filename <- paste0(png_folder,
+#                   "/",
+#                   gsub(" ",
+#                        "",
+#                        paste0(desired_section,
+#                               group_category,
+#                               group_units,
+#                               group_grade,
+#                               group_level,
+#                               min(desired_years),
+#                               max(desired_years)
+#                               )
+#                        ),
+#                   ".png"
+#                   )
+#
+
+
+
+
+# Define the pdf filename
+filename <- paste0(pdf_folder,
                   "/",
                   gsub(" ",
                        "",
@@ -296,19 +339,25 @@ filename <- paste0(png_folder,
                               max(desired_years)
                               )
                        ),
-                  ".png"
+                  ".pdf"
                   )
+
+
+
+
+
 
 # Return both the plot and the filename
 return(list(plot = plot, filename = filename))
 
 } else {
-  
-  
+
+
 # Return NULL for groups with only one observation
  return(NULL)
   }
 }
+
 
 # Apply the function with desired parameters for each category
 plots <- map(
@@ -321,15 +370,34 @@ plots <- map(
 # for diagnostic purposes
 # You can print the individual plots either INSIDE the function (print(plot), or OUTSIDE
 # the function (here) with print(plots)
-print(plots)
+# print(plots)
 
 
 # Save each plot as a PNG file
+# walk(plots, ~ ggsave(
+#   .$filename,
+#   .$plot,
+#   width = 12,
+#   height = 10,
+#   units = 'in',
+#   # bg = 'white',
+#   # scaling = 1,
+#   dpi = 300,
+#   create.dir = TRUE
+#   )
+# )
+#
+
+
+
+
+
+# Save each plot as a PDF file
 walk(plots, ~ ggsave(
   .$filename,
   .$plot,
-  width = 8,
-  height = 7,
+  width = 12,
+  height = 10,
   units = 'in',
   # bg = 'white',
   # scaling = 1,
@@ -339,16 +407,21 @@ walk(plots, ~ ggsave(
 )
 
 
+
+
 # Print the plots
-# walk(plots, ~ print(.$plot))
+walk(plots, ~ print(.$plot))
 
 
 
-#  END OF CREATE MULTIPLE STATIC PLOTS
+#####  END OF CREATE MULTIPLE STATIC PLOTS
 
 ```
 
-<!-- UNCOMMENT THIS SECTION AND RUN IT TO  PRINT LIST OF-->
+
+
+
+<!-- UNCOMMENT THIS SECTION AND RUN IT TO PRINT LIST OF-->
 
 <!-- THE PNG FILES (INDEPENDENTLY OF WHAT IS IN THE  -->
 
@@ -358,13 +431,17 @@ walk(plots, ~ ggsave(
 
 <!-- Create Rmarkdown syntax to display all png files in specified directory -->
 
+
+
+
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 #| echo: false
 #| warning: false
 #| message: false
 
 
-## TO START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
+## START FROM SCRATCH AND CREATE LIST OF PNG FILES GENERATED ABOVE
 ## FOR COPY AND PASTE FROM CONSOLE TO BODY OF QUARTO DOC
 
 # Load Libraries

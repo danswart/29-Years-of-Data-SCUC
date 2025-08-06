@@ -23,7 +23,10 @@ Enjoy!
 #| fig-height: 7
 
 
-
+# # FIRST, choose pdf or png files in the code below
+# # THEN, uncomment and run the code chunk
+#
+#
 # # Load Libraries
 # 
 # library(tidyverse)
@@ -50,15 +53,6 @@ Enjoy!
 # 
 # options(scipen = 999)
 # 
-# # Start recording
-# # gg_record(
-# #   dir = "recording",
-# #   device = "pdf",
-# #   width = 8,
-# #   height = 7,
-# #   units = "in",
-# #   dpi = 300
-# # )
 # 
 # # # Define a custom label formatting function
 # custom_label_func <- function(x) {
@@ -71,6 +65,8 @@ Enjoy!
 #     return(format(x, big.mark = ","))
 #   }
 # }
+# 
+# 
 # 
 # # # Load the data
 # df2 <- read_csv(file = here::here("data",
@@ -113,6 +109,13 @@ Enjoy!
 # png_folder <- paste0("png_",
 #                      desired_section)
 # 
+# 
+# # # Specify the pdf folder name
+# pdf_folder <- paste0("pdf_",
+#                      desired_section)
+# 
+# 
+# 
 # # Replace zeros in the value column with NA
 # first_df$value <- ifelse(first_df$value == 0,
 #                          NA,
@@ -146,6 +149,7 @@ Enjoy!
 #              na.rm = TRUE)
 # y_range <- y_max - y_min
 # 
+# 
 # # Set the desired maximum range for the y-axis
 # max_y_range <- y_range + .75  # You can adjust this value based on your preference
 # 
@@ -170,6 +174,7 @@ Enjoy!
 #                 # ","
 #                 )
 # 
+# 
 # subtitle <- paste0("In Grades - ",
 #                      group_grade,
 #                      ", ",
@@ -180,6 +185,7 @@ Enjoy!
 #                            max(desired_years)
 #                            )
 #                      )
+# 
 # 
 # # Create the chart with qicharts2
 # plot <- qic(
@@ -199,6 +205,7 @@ Enjoy!
 #   xlab = 'Academic Year-Ended'
 # )
 # 
+# 
 # plot <- plot +
 #  scale_y_continuous(
 #   limits = c(0, y_expand),  # Ensure the y-axis does not go below zero
@@ -214,6 +221,7 @@ Enjoy!
 #            hjust = 1,  # Right align
 #            vjust = 1   # Bottom align to position the text above this point
 #            ) +
+# 
 # 
 # theme_minimal(base_size = 16) +
 # theme(legend.position = "none") +
@@ -267,8 +275,27 @@ Enjoy!
 # # print(plot)
 # 
 # 
-# # Define the filename
-# filename <- paste0(png_folder,
+# # # Define the png filename
+# # filename <- paste0(png_folder,
+# #                   "/",
+# #                   gsub(" ",
+# #                        "",
+# #                        paste0(desired_section,
+# #                               group_category,
+# #                               group_units,
+# #                               group_grade,
+# #                               group_level,
+# #                               min(desired_years),
+# #                               max(desired_years)
+# #                               )
+# #                        ),
+# #                   ".png"
+# #                   )
+# 
+# 
+# 
+# # Define the pdf filename
+# filename <- paste0(pdf_folder,
 #                   "/",
 #                   gsub(" ",
 #                        "",
@@ -281,8 +308,11 @@ Enjoy!
 #                               max(desired_years)
 #                               )
 #                        ),
-#                   ".png"
+#                   ".pdf"
 #                   )
+# 
+# 
+# 
 # 
 #  # Return both the plot and the filename
 #  return(list(plot = plot, filename = filename))
@@ -294,6 +324,7 @@ Enjoy!
 #   }
 # }
 # 
+# 
 # # Apply the function with desired parameters for each category
 # plots <- map(
 #   first_df_grouped,
@@ -303,7 +334,23 @@ Enjoy!
 # )
 # 
 # 
-# # Save each plot as a PNG file
+# # # Save each plot as a PNG file
+# # walk(plots, ~ ggsave(
+# #   .$filename,
+# #   .$plot,
+# #   width = 8,
+# #   height = 7,
+# #   units = 'in',
+# #   # bg = 'white',
+# #   # scaling = 1,
+# #   dpi = 300,
+# #   create.dir = TRUE
+# #   )
+# # )
+# 
+#
+#
+# # # Save each plot as a PDF file
 # walk(plots, ~ ggsave(
 #   .$filename,
 #   .$plot,
@@ -317,16 +364,16 @@ Enjoy!
 #   )
 # )
 # 
-#
-# # Stop recording
-# # gg_stop_recording()
 # 
 # # Print the plots
 # walk(plots, ~ print(.$plot))
-
-
-
-#  END OF CREATE MULTIPLE STATIC PLOTS
+# 
+# 
+# 
+# 
+# 
+# 
+# #  END OF CREATE MULTIPLE STATIC PLOTS
 
 
 ```

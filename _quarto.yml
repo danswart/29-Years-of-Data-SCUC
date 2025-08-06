@@ -8,14 +8,14 @@ number-sections: false
 highlight-style: pygments
 
 book:
-  title: "***THE ROLE OF DATA ANALYSIS IN SCHOOL DISTRICT LEADERSHIP***"
-  subtitle: "*~~28~~ 29 Years of Growth and Accomplishment at SCUC-ISD as Context for Today's Decisions*"
+  title: "***HOW TO USE DATA TO IMPROVE YOUR SCHOOL DISTRICT***"
+  subtitle: "*~~28~~ &nbsp;<span style='color: red; font-weight: bold; font-size: 1.2em;'>29</span> Years of Growth and Accomplishment at SCUC-ISD as Context for Today's Decisions*"
   author: "Dan Swart, CPA (retired)"
-  date: "June 5, 2025"
+  date: "August 5, 2025"
   reader-mode: true
   search: true
   downloads: [pdf, epub]
-  description: "Introducing Improved Data Analysis Methods for School Districts"
+  description: "Promoting Improved Data Analysis for School Districts"
   keyword: Schertz, Cibolo, Universal City, ISD, performance, run chart, history, continuous improvement, control charts, data analysis
   site-url: "https://29yearsofdatascuc.netlify.app"
   repo-url: "https://github.com/danswart/29-Years-of-Data-SCUC"
@@ -32,7 +32,7 @@ book:
   #    repo: danswart/29-Years-of-Data-SCUC
   open-graph:
     image: https://github.com/danswart/29-Years-of-Data-SCUC/unique-1-yellow-locker.jpg
-    description: A compilation of 28 years of TEA data for the SCUC-ISD.
+    description: A compilation of 29 years of TEA data for the SCUC-ISD.
   page-footer:
     left: |
       This book was written by Dan Swart, CPA (ret) while serving as Trustee (Place 6), SCUC-ISD
@@ -80,7 +80,7 @@ book:
 
 format:
   html:
-    css: [swart-20240104.css, tachyons.min.css, r-colors.css]
+    css: [swart.css, tachyons.min.css, r-colors.css]
     theme:
       - cosmo
     grid:

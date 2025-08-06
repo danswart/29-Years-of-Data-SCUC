@@ -25,11 +25,14 @@ Enjoy!
 #| echo: false
 #| warning: false
 #| message: false
-#| fig-width: 8
-#| fig-height: 7
+#| fig-width: 12
+#| fig-height: 10
 
 
-
+# # FIRST, choose pdf or png files in the code below
+# # THEN, uncomment and run the code chunk
+# 
+# 
 # # Load Libraries
 # #
 # library(tidyverse)
@@ -105,9 +108,17 @@ Enjoy!
 # # Specify the caption for the plots
 # caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 # 
-# # Specify the png folder name
-# png_folder <- paste0("png_",
+# # # Specify png folder name
+# # png_folder <- paste0("png_",
+# #                      desired_section)
+# #
+# 
+# 
+# # # Specify pdf folder name
+# pdf_folder <- paste0("pdf_",
 #                      desired_section)
+# 
+# 
 # 
 # # Replace zeros in the value column with NA
 # first_df$value <- ifelse(first_df$value == 0,
@@ -258,8 +269,27 @@ Enjoy!
 # 
 # 
 # 
-# # Define the filename
-# filename <- paste0(png_folder,
+# # # Define the filename
+# # filename <- paste0(png_folder,
+# #                   "/",
+# #                   gsub(" ",
+# #                        "",
+# #                        paste0(desired_section,
+# #                               group_category,
+# #                               group_units,
+# #                               group_grade,
+# #                               group_level,
+# #                               min(desired_years),
+# #                               max(desired_years)
+# #                               )
+# #                        ),
+# #                   ".png"
+# #                   )
+# #
+# 
+# 
+# # Define pdf filename
+# filename <- paste0(pdf_folder,
 #                   "/",
 #                   gsub(" ",
 #                        "",
@@ -272,8 +302,14 @@ Enjoy!
 #                               max(desired_years)
 #                               )
 #                        ),
-#                   ".png"
+#                   ".pdf"
 #                   )
+# 
+# 
+# 
+# 
+# 
+# 
 # 
 #  # Return both the plot and the filename
 #  return(list(plot = plot, filename = filename))
@@ -295,12 +331,29 @@ Enjoy!
 # 
 # 
 # 
-# # Save each plot as a png file
+# # # Save each plot as a png file
+# # walk(plots, ~ ggsave(
+# #   .$filename,
+# #   .$plot,
+# #   width = 12,
+# #   height = 10,
+# #   units = 'in',
+# #   # bg = 'white',
+# #   # scaling = 1,
+# #   dpi = 300,
+# #   create.dir = TRUE
+# #   )
+# # )
+# #
+# 
+# 
+# 
+# # # Save each plot as a PDF file
 # walk(plots, ~ ggsave(
 #   .$filename,
 #   .$plot,
 #   width = 12,
-#   height = 9,
+#   height = 10,
 #   units = 'in',
 #   # bg = 'white',
 #   # scaling = 1,
@@ -309,11 +362,15 @@ Enjoy!
 #   )
 # )
 # 
+# 
+# 
+# 
 # # Print the plots
-# # walk(plots, ~ print(.$plot))
-# 
-# 
-# #  END OF CREATE MULTIPLE STATIC PLOTS
+# walk(plots, ~ print(.$plot))
+
+
+
+#####  END OF CREATE MULTIPLE STATIC PLOTS
 
 
 ```

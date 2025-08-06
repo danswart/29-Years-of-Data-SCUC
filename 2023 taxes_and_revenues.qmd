@@ -23,6 +23,10 @@ Enjoy!
 #| fig-height: 7
 
 
+# FIRST, choose pdf or png files in the code below
+# THEN, uncomment and run the code chunk
+
+
 # Load Libraries
 
 library(tidyverse)
@@ -99,9 +103,18 @@ desired_order <- unique(first_df$sort)
 # Specify the caption for the plots
 caption <- c("\n Source:  https://tea.texas.gov/reports-and-data")
 
-# Specify the png folder name
-png_folder <- paste0("png_",
+
+# # Specify the png folder name
+# png_folder <- paste0("png_",
+#                      desired_section)
+
+
+
+# Specify the pdf folder name
+pdf_folder <- paste0("pdf_",
                      desired_section)
+
+
 
 # Replace zeros in the value column with NA
 first_df$value <- ifelse(first_df$value == 0,
@@ -257,8 +270,27 @@ theme(plot.title.position = "panel",
 # print(plot)
 
 
-# Define the filename
-filename <- paste0(png_folder,
+# # Define the png filename
+# filename <- paste0(png_folder,
+#                   "/",
+#                   gsub(" ",
+#                        "",
+#                        paste0(desired_section,
+#                               group_category,
+#                               group_units,
+#                               group_grade,
+#                               group_level,
+#                               min(desired_years),
+#                               max(desired_years)
+#                               )
+#                        ),
+#                   ".png"
+#                   )
+#
+
+
+# Define the pdf filename
+filename <- paste0(pdf_folder,
                   "/",
                   gsub(" ",
                        "",
@@ -271,8 +303,11 @@ filename <- paste0(png_folder,
                               max(desired_years)
                               )
                        ),
-                  ".png"
+                  ".pdf"
                   )
+
+
+
 
  # Return both the plot and the filename
  return(list(plot = plot, filename = filename))
@@ -293,7 +328,24 @@ plots <- map(
 )
 
 
-# Save each plot as a PNG file
+# # Save each plot as a PNG file
+# walk(plots, ~ ggsave(
+#   .$filename,
+#   .$plot,
+#   width = 8,
+#   height = 7,
+#   units = 'in',
+#   # bg = 'white',
+#   # scaling = 1,
+#   dpi = 300,
+#   create.dir = TRUE
+#   )
+# )
+#
+
+
+
+# Save each plot as a PDF file
 walk(plots, ~ ggsave(
   .$filename,
   .$plot,
@@ -309,7 +361,7 @@ walk(plots, ~ ggsave(
 
 
 # Print the plots
-# walk(plots, ~ print(.$plot))
+walk(plots, ~ print(.$plot))
 
 
 
@@ -318,7 +370,7 @@ walk(plots, ~ ggsave(
 
 ```
 
-<!-- UNCOMMENT THIS SECTION AND RUN IT TO  PRINT LIST OF-->
+<!-- UNCOMMENT THIS SECTION AND RUN IT TO PRINT A LIST OF-->
 
 <!-- THE PNG FILES (INDEPENDENTLY OF WHAT IS IN THE  -->
 
