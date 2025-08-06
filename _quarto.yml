@@ -8,10 +8,10 @@ number-sections: false
 highlight-style: pygments
 
 book:
-  title: "***HOW TO USE DATA TO IMPROVE YOUR SCHOOL DISTRICT***"
+  title: "***USE DATA TO IMPROVE YOUR SCHOOL DISTRICT***"
   subtitle: "*~~28~~ &nbsp;<span style='color: red; font-weight: bold; font-size: 1.2em;'>29</span> Years of Growth and Accomplishment at SCUC-ISD as Context for Today's Decisions*"
   author: "Dan Swart, CPA (retired)"
-  date: "August 5, 2025"
+  date: "August 6, 2025"
   reader-mode: true
   search: true
   downloads: [pdf, epub]

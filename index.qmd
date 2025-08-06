@@ -8,7 +8,7 @@ cat('
 <div style="margin-top: 200px;"></div> <!-- Adjust height as needed -->
 <blockquote class="my-quote" style="font-size: 18px;">
   <p>
-<strong>"Welcome to the 2nd Edition.  This Edition adds the results of the 2023 year to each chart, giving us 29 years of important information.  My aim continues to be the improvement of learning in our school district; or any school district.  My goal is to promote new and better ways to analyze school district data for improvement (far superior to current practice), and to create a reference work that illustrates the power of the new methods.  Study each chart and think for just a moment what each one is telling you about what is happening in the district.  Trustees, and others, can use this book in preparation for all meetings where data is to be discussed (which is <i>every</i> meeting). This book provides the critical <b>local</b> historical context needed to understand the meaning and limitations of today&apos;s education data."</strong>
+<strong>"Welcome to the 2nd Edition.  This Edition adds the results of the 2023 year to each chart, giving 29 years of important information.  My aim continues to be the improvement of learning in our school district; or any school district.  My goal is to promote new and better ways to analyze school district data for improvement (far superior to current practice), and to create a reference work to give important context for current decisions.  Study each chart and think for just a moment what each one is telling you about what is happening at the district level.  Trustees, and others, can use this book in preparation for all meetings where data is to be discussed (which is <i>every</i> meeting). This book provides the critical <b>local</b> historical context needed to understand the meaning and limitations of today&apos;s education data."</strong>
 
 </p>
   <p class="quote-author">          — Dan Swart</p>
@@ -26,7 +26,7 @@ cat('
 \\begin{tcolorbox}[colback=white, colframe=teal, boxrule=2pt, arc=4pt]
   \\begin{minipage}{0.95\\textwidth}
     \\raggedright
-    \\Large{"Welcome to the 2nd Edition.  This 2nd Edition adds the results of the 2023 year to each chart, giving us 29 years of important information.  My aim continues to be the improvement of learning in our school district; or any school district.  My goal is to promote new and better ways to analyze school district data for improvement (far superior to current practice), and to create a reference work that illustrates the power of the new methods. Study each chart and think for just a moment what each one is telling you about what is happening in the district.  Trustees, and others, can use this book in preparation for all meetings where data is to be discussed (which is every meeting). This book provides the critical local historical context needed to understand the meaning and limitations of our current education data."}
+    \\Large{"Welcome to the 2nd Edition.  This 2nd Edition adds the results of the 2023 year to each chart, giving us 29 years of important information.  My aim continues to be the improvement of learning in our school district; or any school district.  My goal is to promote new and better ways to analyze school district data for improvement (far superior to current practice), and to create a reference work to give important context for current decisions.  Study each chart and think for just a moment what each one is telling you about what is happening at the district level.  Trustees, and others, can use this book in preparation for all meetings where data is to be discussed (which is every meeting). This book provides the critical local historical context needed to understand the meaning and limitations of our current education data."}
   \\end{minipage}\\\\[5pt]
   \\begin{minipage}{0.95\\textwidth}
     \\raggedleft
@@ -42,27 +42,27 @@ cat('
 
 ***About The Book***
 
-This is not a textbook or a technical book created for researchers. It is designed for ordinary people, doing serious work, and tackling serious issues for school districts. This SCUC-ISD data has, literally, never been seen before in this format. It will help any school district leader who gives it serious attention and reflection.
+This is not a textbook or a technical book. It is designed for ordinary people, doing serious work, and tackling serious issues for school districts. This SCUC-ISD data has, literally, never been seen before in this format. It will help any school district leader who gives it serious attention and reflection.
 
 \vspace{0.75in}
 
 ***The Problem***
 
-***If a different analysis of the same process leads you to different conclusions about what is happening in your school district, you better be using the best analysis available.***
+***Everyone says they want improvement, but current methods of using education data will not tell you what you need to know to improve.***
 
-Trustees review many statistical summaries, scores, 'metrics', and other numbers in their normal monthly work that represent the outputs of various processes in the district. Judgments must be made such as: 'Are we in trouble in this area?', 'Are we doing well in this area?', 'Have our efforts produced the results we hoped for?', 'Can we afford this?'
+Trustees review student scores, 'metrics', and other numbers in their normal monthly work.  These numbers represent the outputs of the many and varied processes of the district. Judgments must be made such as: 'Are we in trouble in this area?', 'Are we doing better in this area?', 'Have our efforts produced the results we hoped for?', 'Can we afford this?'
 
-It began for me as I watched my fellow members of the Board of Trustees make every effort each month to understand the source of the data provided, the historical context of the data, and the theory behind the changes proposed. We have a dynamite team tackling these issues, but it could still be a struggle for everyone. Absent any formal process analysis, in the end we all rely on the intuition and experience of the subject-matter experts presenting the data and proposing future action.
+Current presentations of education data will not answer such questions. In the end, all we can do is rely on the intuition and experience of the subject-matter experts presenting the data and proposing future action.
 
-We know that each process in a school system is capable of producing data for us. In fact, we are awash in data ***with no one who can explain the proper data analysis to use.*** The Texas Education Agency (TEA), the primary repository for all school district data in Texas, is composed of educators, political staffers, and data scientists with no experience in process improvement methods.
+Every process in a school district is capable of producing data for us. In fact, we are awash in data ***with no one who can explain the proper data analysis to use.*** The Texas Education Agency (TEA), a primary repository for district data in Texas, is composed of educators, political staffers, and data analysts with no experience in process improvement methods.
 
-The same is true of the Texas Association of School Boards (TASB). Accordingly, both TEA and TASB provide training and advice on data and process analysis that is just plain wrong, leaving Trustees to struggle on their own.
+The same is true of the Texas Association of School Boards (TASB). Accordingly, both TEA and TASB provide training and advice on data and process analysis that is just plain wrong, leaving Trustees to struggle on their own.  Worse, board members believe these faulty methods are 'Best Practices."
 
-In addition, the Texas Education Agency (TEA) silos their data in ways that make it nearly impossible to retrieve all our prior period data - **so virtually no one does it!** If the measurement period is in years, even two to five years is insufficient to establish a reliable capability estimate of a process.
+In addition, the Texas Education Agency (TEA) silos their data in ways that make it nearly impossible to retrieve all our prior period data - **so virtually no one does it!**  If the measurement period is in years, even two to five years is insufficient to establish a reliable estimate of what a process can produce in the future.
 
 Like most districts, our district continues to face very challenging times. Resources are scarce and no one can afford to waste time or to be misled by inferior data analysis.
 
-***I have an obligation to inform those working with school data of these simple, but powerful tools. They require only Excel, and an open mind.***
+***I feel an obligation to show those working with education data two simple, but powerful tools. The 'Run Chart' and the 'Expectation Chart'.  This edition features th Run Chart.  Future editions will feature the 'Expectation Chart.'  Together they are a powerful analysis.  They require only Excel, and an open mind.***
 
 \vspace{0.75in}
 
