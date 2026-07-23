@@ -70,7 +70,7 @@ Enjoy!
 # 
 # # # Load the data
 # df2 <- read_csv(file = here::here("data",
-#                                   "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
+#                                   "SCUC_Snapshots_1995_to_2023_LONG_CANONICAL.csv")
 #                 )
 # 
 # 
@@ -424,7 +424,7 @@ Enjoy!
 # 
 # # # Load the data
 # df2 <- read_csv(file = here::here("data",
-#                                   "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
+#                                   "SCUC_Snapshots_1995_to_2023_LONG_CANONICAL.csv")
 #                 )
 # 
 # 

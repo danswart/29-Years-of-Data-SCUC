@@ -120,3 +120,5 @@ docs/
 # !figures/*.png
 # !figures/*.svg
 .positai
+
+/.quarto/

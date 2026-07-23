@@ -41,7 +41,7 @@ Enjoy!
 # 
 # # Read in data
 #  snapshots <- read_csv(file = here::here("data",
-#                                    "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
+#                                    "SCUC_Snapshots_1995_to_2023_LONG_CANONICAL.csv")
 #                  )
 # 
 # 
@@ -329,7 +329,7 @@ knitr::include_graphics("gif/student-composition-racing-bar-1995-2023.gif")
 # )
 # 
 # # Load the data
-# df2 <- read_csv(file = here::here("data", "20250227 SCUC Snapshots 1995 to 2023-LONG.csv"))
+# df2 <- read_csv(file = here::here("data", "SCUC_Snapshots_1995_to_2023_LONG_CANONICAL.csv"))
 # 
 # # Specify the desired section
 # desired_section <- "Students"
@@ -511,7 +511,7 @@ knitr::include_graphics("gif/student-composition-racing-bar-1995-2023.gif")
 # 
 # 
 # # Load the data
-# df2 <- read_csv(file = here::here("data", "20250227 SCUC Snapshots 1995 to 2023-LONG.csv"))
+# df2 <- read_csv(file = here::here("data", "SCUC_Snapshots_1995_to_2023_LONG_CANONICAL.csv"))
 # 
 # # Specify the desired section
 # desired_section <- "Students"

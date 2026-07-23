@@ -71,8 +71,9 @@ custom_label_func <- function(x) {
 
 # # Load the data
 df2 <- read_csv(file = here::here("data",
-                                 "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
-               )
+                                 "SCUC_Snapshots_1995_to_2023_LONG_CANONICAL.csv")
+               ) %>%
+  dplyr::rename(year = date)
 
 
 # Begin pipeline
@@ -190,6 +191,7 @@ subtitle <- paste0("In Grades - ",
 plot <- qic(
   x = df_group$year,
   y = df_group$value,
+  n = rep(NA_real_, nrow(df_group)),
   chart = "run",
   decimals = 0,
   point.size = 2.5,
@@ -417,7 +419,7 @@ walk(plots, ~ print(.$plot))
 # 
 # # # Load the data
 # df2 <- read_csv(file = here::here("data",
-#                                   "20250227 SCUC Snapshots 1995 to 2023-LONG.csv")
+#                                   "SCUC_Snapshots_1995_to_2023_LONG_CANONICAL.csv")
 #                 )
 # 
 # 
